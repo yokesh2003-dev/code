@@ -1,0 +1,21 @@
+packages:
+  "framer-motion": "For premium smooth animations, page transitions, and the floating mic interactions"
+  "recharts": "For the data visualization charts on the Analytics page"
+  "@hello-pangea/dnd": "For the drag-and-drop Kanban board functionality"
+  "date-fns": "For formatting and parsing relative dates in the AI engine"
+  "lucide-react": "For consistent, premium iconography throughout the app"
+  "uuid": "For generating unique IDs for tasks and history items"
+  "clsx": "Utility for constructing class names"
+  "tailwind-merge": "Utility for merging tailwind classes safely"
+
+images:
+  - path: "artifacts/ai-work-platform/public/images/logo-mark.png"
+    description: "Minimalist, sleek tech logo mark, abstract geometric shape resembling a brain or spark, vibrant indigo and purple gradient, transparent background, clean modern SaaS style"
+    aspect_ratio: "1:1"
+  - path: "artifacts/ai-work-platform/public/images/hero-glow.png"
+    description: "Subtle abstract background texture with dark deep indigo background and soft floating neon purple and cyan blurred orbs, glassmorphism vibe, very dark and moody"
+    aspect_ratio: "16:9"
+
+notes:
+  - This app uses localStorage for all persistence as requested.
+  - No backend API is required. Data fetching hooks are mocked to use the global React Context store.

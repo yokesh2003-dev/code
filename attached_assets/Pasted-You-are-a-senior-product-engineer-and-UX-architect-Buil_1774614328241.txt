@@ -1,0 +1,363 @@
+You are a senior product engineer and UX architect.
+
+Build a production-quality AI Work Intelligence Platform (frontend-first, scalable to backend later).
+
+---
+
+## 🧠 CORE PRODUCT
+
+This is NOT a task app.
+
+It is a system:
+Capture → Understand → Assign → Track → Collaborate → Analyze
+
+Inspired by:
+
+* Notion (structure)
+* Linear (speed)
+* Boardio (card stacking UI)
+* Zenzi (AI intelligence)
+
+---
+
+## ⚙️ TECH RULES
+
+* React (latest)
+* Modular architecture
+* localStorage (temporary)
+* Design must feel premium SaaS
+* No basic UI allowed
+
+---
+
+🏢 WORKSPACE SYSTEM (CRITICAL – DO NOT SKIP)
+
+Implement multi-workspace system.
+
+Each workspace contains:
+
+* name
+* supportEmail
+* members
+* roles (Admin, Editor, Viewer)
+* branding (logo, colors)
+
+Features:
+
+1. Workspace Switcher (Sidebar top)
+
+2. Workspace Settings Page:
+
+   * General:
+
+     * Workspace Name
+     * Support Email
+   * Members:
+
+     * List users
+     * Add member via email
+     * Assign roles
+     * Remove members
+   * Branding:
+
+     * Upload logo
+     * Set colors
+     * Live preview UI
+   * Delete Workspace:
+
+     * Show warning
+     * Show workflow count
+     * irreversible delete
+
+---
+
+📊 DASHBOARD (BOARDIO STYLE – IMPORTANT)
+
+Layout:
+LEFT → My Tasks
+RIGHT → Team Tasks
+
+TASK CARD DESIGN:
+
+* Cards stacked like deck (slight overlap)
+* Each row = 1 task
+* Multiple rows
+
+HOVER INTERACTION (CRITICAL):
+
+* Card lifts (scale 1.03)
+* Shadow increases
+* Expands slightly
+* Shows extra info:
+
+  * description
+  * deadline
+  * owner
+  * priority
+
+This MUST feel like:
+"pulling card from stack"
+
+---
+
+📋 TASK SYSTEM (ADVANCED)
+
+Each task must store:
+
+* id
+* title
+* description
+* owner
+* assignedBy
+* deadline
+* priority
+* category
+* effort
+* status (Pending, Completed, Expired, Skipped)
+* workspaceId
+* comments[]
+* activityLog[]
+* ccList[]
+* sharedWith[]
+
+---
+
+🧠 AI TASK ENGINE
+
+Input sources:
+
+* Text
+* Audio recording
+* Notes
+
+AI must:
+
+* Extract tasks
+* Detect:
+
+  * owner (names)
+  * deadlines
+  * urgency
+  * work type
+
+User CAN EDIT everything after generation.
+
+---
+
+🎙️ AUDIO + NOTES CAPTURE
+
+Floating mic button:
+
+* Record → transcript → generate tasks
+
+Also add:
+📝 "Quick Notes" module:
+
+* Save raw notes
+* Convert notes → tasks
+* Expand note into detailed explanation
+
+---
+
+🧱 TASK INTERACTIONS
+
+1. Click task → open DETAIL PANEL
+
+DETAIL VIEW MUST SHOW:
+
+* Full description
+* Who assigned
+* Who owns
+* Deadline
+* Comments section
+* Activity history
+* CC users
+* Share option
+
+2. COMMENTS SYSTEM:
+
+* Add comment
+* Add escalation note
+* Mark "completed with notes"
+
+3. STATUS ACTIONS:
+
+* Mark complete
+* Mark skipped
+* Mark expired
+
+---
+
+🧩 KANBAN BOARD
+
+Columns:
+
+* Pending
+* In Progress
+* Completed
+
+Features:
+
+* Drag & drop
+* Smooth animation
+
+---
+
+📜 HISTORY PAGE
+
+Track:
+
+* Completed
+* Pending
+* Skipped
+* Expired
+
+Show timeline view.
+
+---
+
+📈 ANALYTICS
+
+Show:
+
+* Completion speed
+* Task completion rate
+* Overdue trends
+
+Charts:
+
+* Weekly performance
+* Category distribution
+* Priority load
+
+---
+
+🗂️ DRIVE MODULE (ADVANCED)
+
+Central document storage:
+
+Features:
+
+* Upload files
+* Folder system
+* Grid/List view
+* Search
+* Sort by name/date
+* Status:
+
+  * In Progress
+  * Completed
+  * Declined
+
+Actions:
+
+* Download
+* Rename
+* Move
+* Delete
+
+IMPORTANT:
+Structure integration for:
+
+* Google Drive
+* Microsoft OneDrive
+
+(Mock integration UI only, no real API required)
+
+---
+
+🔗 SHARING SYSTEM
+
+User can:
+
+* Assign task to member
+* Add CC emails
+* Share task via email (mock UI)
+
+---
+
+🔍 AI SEARCH (IMPORTANT)
+
+Global search bar:
+
+User can type:
+
+* task name
+* keyword
+* person name
+
+System returns:
+
+* matching tasks
+* related notes
+* suggestions
+
+---
+
+🎨 DESIGN SYSTEM (ZENZI + BOARDIO)
+
+* Dark sidebar
+* Light content
+* Glass effect (subtle)
+* Rounded-xl
+* Smooth transitions
+
+Priority colors:
+
+* Urgent → Red
+* Important → Orange
+* Later → Gray
+* Optional → Blue
+
+---
+
+⚡ INTERACTION RULES (CRITICAL)
+
+* Hover = ALWAYS interactive
+* Cards must feel alive
+* No flat UI
+* Use transitions everywhere
+
+---
+
+📄 PAGES
+
+/dashboard
+/tasks
+/board
+/history
+/analytics
+/drive
+/settings (workspace inside)
+
+---
+
+🧪 DEMO DATA (MANDATORY)
+
+Preload:
+
+* 1 workspace
+* 5–10 tasks
+* Multiple users
+
+---
+
+⚠️ STRICT RULES
+
+* Do NOT skip workspace system
+* Do NOT skip hover animations
+* Do NOT skip team tasks
+* Do NOT simplify UI
+* Do NOT leave empty states
+
+---
+
+✅ OUTPUT
+
+* Fully working app
+* Premium UI
+* Realistic interactions
+* Scalable structure
+
+Build step-by-step.
+Do not skip anything.

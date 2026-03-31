@@ -1,0 +1,332 @@
+You are a senior full-stack engineer and product designer.
+
+Build a complete, production-quality frontend web application.
+
+---
+
+## 🧠 PRODUCT OVERVIEW
+
+App Name: AI Work Intelligence Platform
+
+This is NOT a basic task app.
+
+It is an AI-powered system that:
+Capture → Understand → Extract → Organize → Track → Analyze
+
+Inspired by:
+
+* Notion (structure)
+* Linear (speed & UX)
+* Boardio (kanban)
+* Zenzi (AI-first workflow)
+
+---
+
+## ⚙️ CORE REQUIREMENT
+
+Frontend-only application (NO backend)
+
+* Use React (latest)
+* Use modern component architecture
+* Use localStorage for persistence
+* Use clean state management (useState/useReducer)
+
+---
+
+🎙️ CRITICAL FEATURE (DO NOT SKIP)
+
+AUDIO CAPTURE SYSTEM
+
+Add floating mic button (bottom-right)
+
+States:
+
+* Idle
+* Recording (red pulse + timer)
+* Processing
+* Completed
+
+Implementation:
+
+* Use MediaRecorder API
+* Capture microphone input
+* Show live waveform (basic visualization)
+* Show timer while recording
+
+After recording:
+
+* Convert audio to text (mock function)
+* Display transcript preview
+* Button: "Generate Tasks"
+
+Use this sample transcript:
+"I spoke with Ravi, he will send the report by Friday. I need to review it tomorrow. Follow up with Priya next week about onboarding issues."
+
+---
+
+🧠 AI TASK ENGINE
+
+Convert input (text OR transcript) into structured tasks
+
+Each task must include:
+
+* id
+* title
+* description
+* owner
+* assignedBy
+* deadline
+* priority (Urgent / Important / Later / Optional)
+* category (Work / Follow-up / Review / Personal)
+* effort (Low / Medium / High)
+* status (Pending / Completed / Expired)
+* workspaceId
+* comments
+* ccList
+
+Rules:
+
+* Detect names → assign owner
+* Detect deadlines → assign urgency
+* "today" → Urgent
+* action words → Important
+* vague → Later
+* optional tone → Optional
+
+---
+
+🧩 UI LAYOUT (STRICT)
+
+Layout structure:
+
+LEFT SIDEBAR (dark)
+
+* Workspace switcher
+* Dashboard
+* Tasks
+* Board
+* Analytics
+* Drive
+* History
+* Settings
+
+TOP HEADER
+
+* Search bar
+* New Capture button
+* Notifications
+* Profile
+* Theme toggle
+
+MAIN CONTENT AREA
+
+---
+
+📋 TASK INPUT
+
+Top section:
+
+* Multiline textarea
+* Placeholder: "Paste notes, meetings, or tasks…"
+
+Buttons:
+
+* Generate Tasks
+* Clear
+
+---
+
+📄 PAGES (MUST BUILD ALL)
+
+/dashboard
+/tasks
+/board
+/analytics
+/drive
+/history
+/settings
+
+---
+
+📊 DASHBOARD
+
+Split layout:
+LEFT → My Tasks
+RIGHT → Team Tasks
+
+Task cards:
+
+* Priority colored
+* Hover expand
+* Quick complete
+
+---
+
+📋 TASK LIST
+
+Each task card:
+
+* Title
+* Description
+* Owner
+* Deadline
+* Priority (color-coded)
+* Category
+* Effort
+* Checkbox
+
+Behavior:
+
+* Urgent first
+* Completed last
+* Completed = strikethrough
+
+---
+
+🧱 KANBAN BOARD
+
+Columns:
+
+* Pending
+* In Progress
+* Completed
+
+Features:
+
+* Drag and drop
+* Smooth transitions
+* Card UI
+
+---
+
+📋 TASK MODAL
+
+On click:
+
+* Editable fields
+* Comments section
+* Activity history
+* Delete option
+
+---
+
+📈 ANALYTICS
+
+Show:
+
+* Total
+* Completed
+* Pending
+* Overdue
+
+Charts:
+
+* Weekly activity
+* Priority distribution
+* Category breakdown
+
+---
+
+🧠 SMART INSIGHTS
+
+Dynamic messages:
+
+* "3 urgent tasks need attention"
+* "2 tasks overdue"
+* "Follow-ups pending"
+
+---
+
+🔍 FILTERS
+
+Filter by:
+
+* Priority
+* Status
+* Category
+
+Sort:
+
+* Urgent first
+* Completed last
+
+---
+
+💾 STORAGE
+
+Use localStorage:
+
+* Persist tasks
+* Persist workspace
+* Load on refresh
+
+---
+
+🗂️ DRIVE MODULE
+
+* File list UI
+* Upload placeholder
+* Status (In Progress / Completed)
+
+---
+
+🎨 DESIGN SYSTEM (STRICT)
+
+Style:
+
+* Premium SaaS UI
+* Clean, minimal, modern
+* Rounded-xl components
+* Soft shadows
+* Smooth transitions
+
+Colors:
+
+* Urgent → Red
+* Important → Orange
+* Later → Gray
+* Optional → Blue
+
+Effects:
+
+* Hover lift (scale + shadow)
+* Subtle animations
+* Light glassmorphism
+
+---
+
+🧪 SAMPLE DATA (MANDATORY)
+
+Preload this data:
+
+Workspace:
+{
+id: "workspace-1",
+name: "Product Team"
+}
+
+Tasks:
+(Include 5 realistic tasks with different priorities, deadlines, owners)
+
+---
+
+⚠️ STRICT RULES
+
+* DO NOT skip audio feature
+* DO NOT skip kanban board
+* DO NOT skip analytics
+* DO NOT leave UI empty
+* DO NOT simplify UI
+* ALL features must be functional
+
+---
+
+✅ OUTPUT REQUIREMENT
+
+* Fully working frontend app
+* Modular components
+* Clean structure
+* Production-quality UI
+
+Build the complete application step-by-step.
+Do not skip any feature.

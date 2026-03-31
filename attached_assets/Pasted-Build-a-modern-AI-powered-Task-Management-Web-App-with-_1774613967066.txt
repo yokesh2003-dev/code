@@ -1,0 +1,623 @@
+Build a modern AI-powered Task Management Web App with a clean, premium UI inspired by Notion + Linear + Boardio Kanban UX.
+🧠 CORE CONCEPT
+This is an AI Task Assistant that:
+•	Converts unstructured text into structured tasks
+•	Displays them in list + kanban board
+•	Tracks progress, analytics, and reminders
+•	Works fully on frontend with localStorage (no backend required)
+________________________________________
+⚙️ CORE FEATURES
+1. AI TASK EXTRACTION ENGINE
+User inputs raw text → system converts into tasks with fields:
+Each task must include:
+•	id
+•	task_title (short)
+•	description
+•	owner (default: "Me")
+•	deadline (detect from text like “tomorrow”, “Friday”, etc.)
+•	priority (Urgent / Important / Later / Optional)
+•	category (Work / Follow-up / Review / Personal)
+•	estimated_effort (Low / Medium / High)
+•	status (Pending / Completed)
+Rules:
+•	If deadline = today → Urgent
+•	If action words (submit/review/follow-up) → Important
+•	If vague → Later
+•	If optional tone → Optional
+________________________________________
+2. UI STRUCTURE (VERY IMPORTANT)
+A. MAIN LAYOUT
+•	Left Sidebar (navigation)
+•	Top Header
+•	Main Content Area
+________________________________________
+3. SIDEBAR (like Notion)
+Include:
+•	Dashboard
+•	Tasks
+•	Board (Kanban)
+•	Analytics
+•	History
+•	Settings
+________________________________________
+4. HEADER
+•	App title: “AI Task Assistant”
+•	Search bar
+•	Quick actions button
+•	Theme toggle (dark/light)
+________________________________________
+5. TASK INPUT SECTION
+Top input box:
+•	Multi-line textarea
+•	Placeholder: “Paste notes, meetings, or tasks…”
+Buttons:
+•	“Generate Tasks”
+•	“Clear”
+________________________________________
+6. TASK DISPLAY (LIST VIEW)
+Each task card must show:
+•	Title
+•	Description
+•	Owner
+•	Deadline
+•	Priority (color-coded)
+•	Category
+•	Effort
+•	Checkbox (complete)
+Behavior:
+•	Urgent tasks at top
+•	Completed tasks move to bottom
+•	Completed tasks are strike-through
+________________________________________
+7. KANBAN BOARD (BOARDIO STYLE)
+Columns:
+•	Pending
+•	In Progress
+•	Completed
+Features:
+•	Drag and drop tasks between columns
+•	Smooth UI transitions
+•	Card-style tasks
+________________________________________
+8. TASK DETAIL MODAL
+Click task → open modal:
+•	Editable fields
+•	Full description
+•	Change priority, deadline, owner
+•	Delete task
+________________________________________
+9. ANALYTICS DASHBOARD
+Show:
+•	Total tasks
+•	Completed
+•	Pending
+•	Overdue
+•	Urgent count
+Charts:
+•	Completion rate (progress bar)
+•	Tasks by priority
+•	Tasks by category
+•	Weekly activity chart
+________________________________________
+10. SMART INSIGHTS / AI SUGGESTIONS
+Dynamic suggestions:
+•	“You have 3 urgent tasks”
+•	“2 tasks overdue”
+•	“Follow up pending items”
+________________________________________
+11. FILTER & SORT
+Filters:
+•	Priority
+•	Status
+•	Category
+Sorting:
+•	Urgent first
+•	Completed last
+________________________________________
+12. STORAGE
+Use localStorage:
+•	Save tasks
+•	Load on refresh
+•	No backend required
+________________________________________
+13. EXPORT FEATURE
+Allow:
+•	Export tasks as text / JSON
+________________________________________
+14. REMINDERS (FRONTEND ONLY)
+•	Show toast notifications for upcoming deadlines
+•	Highlight overdue tasks
+________________________________________
+15. DESIGN SYSTEM
+Style:
+•	Minimal, modern, premium
+•	Inspired by:
+o	Notion
+o	Linear
+o	Boardio
+Use:
+•	Soft shadows
+•	Rounded cards
+•	Clean spacing
+•	Subtle animations
+Colors:
+•	Urgent → Red
+•	Important → Orange
+•	Later → Blue
+•	Optional → Gray
+________________________________________
+16. COMPONENT STRUCTURE
+Create modular components:
+•	TaskCard
+•	BoardTaskCard
+•	TaskList
+•	TaskDetailModal
+•	Sidebar
+•	Header
+•	AnalyticsDashboard
+•	FilterBar
+•	SmartSuggestions
+•	FloatingActionButton
+•	WidgetPanel
+________________________________________
+17. ADVANCED UX
+•	Floating button (bottom-right)
+•	Smooth transitions
+•	Drag-drop interactions
+•	Toast notifications
+•	Empty states
+________________________________________
+18. PAGES
+Create pages:
+•	/dashboard
+•	/tasks
+•	/board
+•	/analytics
+•	/history
+•	/settings
+________________________________________
+19. PERFORMANCE
+•	Use React hooks
+•	Clean state management
+•	No unnecessary re-renders
+________________________________________
+20. FINAL OUTPUT REQUIREMENT
+The app must:
+•	Be fully functional
+•	Have no placeholders
+•	Work without backend
+•	Be production-ready UI
+________________________________________
+⚠️ IMPORTANT
+•	Do NOT simplify UI
+•	Do NOT remove analytics
+•	Do NOT skip kanban board
+•	Do NOT skip task parsing logic
+•	Keep everything modular and scalable
+________________________________________
+Build the complete app.
+Build a premium AI Work Intelligence Platform (NOT just a task app).
+This app should feel like a combination of:
+•	Notion (clean structure)
+•	Linear (speed + clarity)
+•	Boardio (kanban UX)
+•	Zenzi (AI-first assistant + capture system)
+________________________________________
+🧠 CORE PRODUCT IDEA
+This is an AI Capture → Intelligence → Execution system
+User flow:
+1.	Capture (Text / Audio / Notes)
+2.	AI processes input
+3.	Extracts tasks, actions, insights
+4.	Organizes into boards, lists, analytics
+________________________________________
+🎙️ CRITICAL FEATURE (MUST IMPLEMENT)
+AUDIO CAPTURE SYSTEM (VERY IMPORTANT)
+Add a "Record Meeting" feature:
+UI:
+•	Floating mic button (bottom right)
+•	States:
+o	Idle
+o	Recording (red pulse animation)
+o	Processing
+o	Completed
+Functionality:
+•	Record audio (browser mic API)
+•	Convert audio → text (mock or placeholder function)
+•	Feed transcript into task extraction engine
+UX:
+•	Show live waveform while recording
+•	Show "Recording..." timer
+•	After stop:
+→ Show transcript preview
+→ Button: "Generate Tasks"
+________________________________________
+🧠 AI TASK ENGINE (ENHANCED)
+Input sources:
+•	Text input
+•	Audio transcript
+•	Manual task entry
+Each task:
+•	title
+•	description
+•	owner
+•	assignedBy
+•	deadline (auto detect)
+•	priority (Urgent / Important / Later / Optional)
+•	category
+•	effort
+•	status
+•	workspaceId
+•	comments
+•	ccList
+Rules:
+•	Detect names → assign owner
+•	Detect deadlines → assign urgency
+•	Detect follow-ups → category
+•	Smart grouping of related tasks
+________________________________________
+🎨 DESIGN SYSTEM (ZENZI + CLASSY)
+Visual Style:
+•	Premium SaaS (NOT basic UI)
+•	Clean whitespace
+•	Smooth animations
+•	Soft shadows
+•	Rounded-xl components
+Color System:
+•	Deep blue primary
+•	Soft gray backgrounds
+•	Subtle gradients
+•	Priority colors:
+o	Urgent → Red
+o	Important → Orange
+o	Later → Neutral gray
+o	Optional → Blue
+Effects:
+•	Glassmorphism (light)
+•	Hover lift (scale + shadow)
+•	Smooth transitions
+________________________________________
+🧩 LAYOUT (VERY IMPORTANT)
+LEFT SIDEBAR (like your image)
+•	Workspace switcher
+•	Dashboard
+•	Tasks
+•	Board
+•	Analytics
+•	Drive
+•	History
+•	Settings
+Dark themed sidebar
+________________________________________
+TOP HEADER
+•	Search bar
+•	“New Capture” button
+•	Notifications
+•	Profile
+________________________________________
+📊 DASHBOARD (BOARDIO STYLE)
+Split view:
+LEFT:
+•	"My Tasks"
+RIGHT:
+•	"Team Tasks"
+Each card:
+•	Colored based on priority
+•	Hover expands with details
+•	Quick complete button
+________________________________________
+🧱 KANBAN BOARD
+Columns:
+•	Pending
+•	In Progress
+•	Completed
+Features:
+•	Drag and drop
+•	Smooth animation
+•	Card stacking effect
+________________________________________
+📋 TASK DETAIL MODAL
+When clicked:
+•	Full details
+•	Editable fields
+•	Comments section
+•	Activity history
+•	Sharing (assignedTo, ccList)
+________________________________________
+📈 ANALYTICS (LIKE IMAGE YOU SENT)
+Create modern dashboard with:
+Top cards:
+•	Total
+•	Completed
+•	Pending
+•	Overdue
+Charts:
+•	Weekly activity (bar chart)
+•	Priority distribution (pie chart)
+•	Category breakdown
+________________________________________
+🧠 SMART INSIGHTS
+Dynamic suggestions:
+•	“3 urgent tasks need attention”
+•	“2 overdue tasks”
+•	“Follow-ups pending”
+________________________________________
+🔍 FILTER SYSTEM
+Filters:
+•	Priority
+•	Status
+•	Category
+Sorting:
+•	Urgent first
+•	Completed last
+________________________________________
+💾 STORAGE
+•	Use localStorage
+•	Persist tasks + workspaces
+________________________________________
+🗂️ DRIVE MODULE
+•	File list UI
+•	Upload placeholder
+•	Status:
+o	In Progress
+o	Completed
+________________________________________
+🧠 ADVANCED UX
+•	Floating action button
+•	Toast notifications
+•	Empty states
+•	Loading skeletons
+•	Smooth transitions
+________________________________________
+📄 PAGES
+•	/dashboard
+•	/tasks
+•	/board
+•	/analytics
+•	/drive
+•	/history
+•	/settings
+________________________________________
+⚠️ STRICT RULES
+•	Do NOT simplify UI
+•	Do NOT skip audio recording feature
+•	Do NOT skip kanban board
+•	Do NOT skip analytics
+•	Do NOT use basic styling
+________________________________________
+✅ FINAL OUTPUT
+The app must:
+•	Feel like a premium SaaS product
+•	Be visually impressive
+•	Fully functional frontend
+•	Modular and scalable
+________________________________________
+Build this complete product.
+Build a premium AI Work Intelligence Platform (Notion + Linear + Boardio + Zenzi style).
+________________________________________
+🧠 CORE IDEA
+AI-powered system to:
+Capture → Understand → Extract → Organize → Track → Analyze
+________________________________________
+🎙️ AUDIO CAPTURE (MUST HAVE)
+Add floating mic button (bottom-right):
+States:
+•	Idle
+•	Recording (red pulse + timer)
+•	Processing
+•	Completed
+Flow:
+1.	Record audio (browser mic)
+2.	Convert to transcript (mock function)
+3.	Show transcript preview
+4.	Button → "Generate Tasks"
+________________________________________
+🧠 AI TASK ENGINE
+Convert input into structured tasks:
+Fields:
+•	id
+•	title
+•	description
+•	owner
+•	assignedBy
+•	deadline
+•	priority (Urgent / Important / Later / Optional)
+•	category (Work / Follow-up / Review / Personal)
+•	effort (Low / Medium / High)
+•	status (Pending / Completed / Expired)
+•	workspaceId
+•	comments
+•	ccList
+________________________________________
+🎨 DESIGN SYSTEM (ZENZI STYLE)
+•	Premium SaaS UI
+•	Clean + classy + minimal
+•	Soft shadows + rounded-xl
+•	Smooth animations
+•	Dark sidebar + light content
+Priority colors:
+•	Urgent → Red
+•	Important → Orange
+•	Later → Gray
+•	Optional → Blue
+________________________________________
+🧩 LAYOUT
+Sidebar
+•	Workspace switcher
+•	Dashboard
+•	Tasks
+•	Board
+•	Analytics
+•	Drive
+•	History
+•	Settings
+Header
+•	Search bar
+•	New Capture button
+•	Notifications
+•	Profile
+________________________________________
+📊 DASHBOARD (BOARDIO STYLE)
+Split:
+LEFT → My Tasks
+RIGHT → Team Tasks
+Cards:
+•	Hover expand
+•	Priority colored
+•	Quick complete
+________________________________________
+🧱 KANBAN BOARD
+Columns:
+•	Pending
+•	In Progress
+•	Completed
+Drag & drop enabled
+________________________________________
+📋 TASK DETAIL MODAL
+•	Full editable data
+•	Comments
+•	Sharing (assignedTo, ccList)
+________________________________________
+📈 ANALYTICS
+•	Completion rate
+•	Total / Pending / Completed / Overdue
+Charts:
+•	Weekly activity
+•	Priority distribution
+•	Category breakdown
+________________________________________
+💾 STORAGE
+Use localStorage
+________________________________________
+🗂️ DRIVE
+•	File list
+•	Upload placeholder
+•	Status tracking
+________________________________________
+🧠 SMART INSIGHTS
+•	Urgent alerts
+•	Overdue alerts
+•	Follow-up suggestions
+________________________________________
+🔍 FILTERS
+•	Priority
+•	Status
+•	Category
+________________________________________
+📄 PAGES
+/dashboard
+/tasks
+/board
+/analytics
+/drive
+/history
+/settings
+________________________________________
+🧪 SAMPLE DEMO DATA (VERY IMPORTANT)
+Preload the app with realistic data:
+Workspace
+{
+id: "workspace-1",
+name: "Product Team",
+supportEmail: "support@company.com"
+}
+________________________________________
+Sample Tasks
+[
+{
+id: "1",
+title: "Send Q1 Report",
+description: "Prepare and send Q1 performance report to leadership",
+owner: "Ravi",
+assignedBy: "You",
+deadline: "Friday",
+priority: "Urgent",
+category: "Work",
+effort: "High",
+status: "Pending",
+workspaceId: "workspace-1",
+comments: [],
+ccList: ["manager@company.com"]
+},
+{
+id: "2",
+title: "Review Design Mockups",
+description: "Check new dashboard UI designs and provide feedback",
+owner: "You",
+assignedBy: "Anita",
+deadline: "Tomorrow",
+priority: "Important",
+category: "Review",
+effort: "Medium",
+status: "Pending",
+workspaceId: "workspace-1",
+comments: [],
+ccList: []
+},
+{
+id: "3",
+title: "Follow up with Client",
+description: "Call client regarding onboarding issues",
+owner: "You",
+assignedBy: "You",
+deadline: "Next Week",
+priority: "Important",
+category: "Follow-up",
+effort: "Low",
+status: "Pending",
+workspaceId: "workspace-1",
+comments: [],
+ccList: []
+},
+{
+id: "4",
+title: "Update Documentation",
+description: "Update internal docs for new feature release",
+owner: "Priya",
+assignedBy: "You",
+deadline: "Monday",
+priority: "Later",
+category: "Work",
+effort: "Medium",
+status: "Pending",
+workspaceId: "workspace-1",
+comments: [],
+ccList: []
+},
+{
+id: "5",
+title: "Team Meeting Summary",
+description: "Summarize last sprint meeting notes",
+owner: "You",
+assignedBy: "You",
+deadline: "Today",
+priority: "Urgent",
+category: "Work",
+effort: "Low",
+status: "Completed",
+workspaceId: "workspace-1",
+comments: [],
+ccList: []
+}
+]
+________________________________________
+🎙️ SAMPLE AUDIO TRANSCRIPT
+When user clicks "Generate Tasks" after recording, use this mock transcript:
+"I spoke with Ravi, he will send the report by Friday. I need to review it tomorrow. Follow up with Priya next week about onboarding issues."
+Convert this into tasks automatically.
+________________________________________
+⚠️ STRICT RULES
+•	Do NOT leave UI empty
+•	Always preload demo data
+•	Do NOT simplify UI
+•	Do NOT skip audio feature
+•	Do NOT skip analytics or board
+________________________________________
+✅ FINAL OUTPUT
+•	Fully working frontend
+•	Beautiful UI
+•	Realistic demo experience
+•	Production-level design
+________________________________________
+Build this complete app.
+

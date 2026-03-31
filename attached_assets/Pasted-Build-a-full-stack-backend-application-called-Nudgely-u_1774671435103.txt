@@ -1,0 +1,145 @@
+Build a full-stack backend application called "Nudgely" using Node.js, Express, and MongoDB.
+
+CORE REQUIREMENTS:
+
+1. AUTH SYSTEM
+
+* Implement JWT-based authentication
+* Roles: SUPER_ADMIN, USER
+* Only SUPER_ADMIN can create users
+* Login with username + password
+* Password must be hashed using bcrypt
+
+2. DATABASE (MongoDB with Mongoose)
+   Create schemas:
+
+User:
+
+* username (unique)
+* password (hashed)
+* role (SUPER_ADMIN or USER)
+* createdAt
+
+Task:
+
+* title
+* description
+* priority (low, medium, high)
+* dueDate
+* assignedTo (User reference)
+* createdBy (User reference)
+* createdAt
+
+Meeting:
+
+* type (audio or text)
+* content (text or file path)
+* createdBy
+* createdAt
+
+3. ADMIN FEATURES
+
+* Create user
+* Delete user
+* List all users
+* Assign roles
+
+4. AUDIO UPLOAD
+
+* Use multer for file upload
+* Store files locally in /uploads
+* Accept audio files
+
+5. AI INTEGRATION (Gemini API)
+
+* Endpoint: POST /process-meeting
+
+* Input:
+
+  * audio file OR text (MOM)
+
+* If audio:
+
+  * simulate transcription (placeholder function)
+
+* Send text to Gemini API
+
+* Prompt Gemini to:
+  "Extract tasks with title, priority, and due date from the following meeting notes"
+
+* Parse response into JSON
+
+* Save tasks in DB
+
+6. TASK MANAGEMENT
+
+* Get all tasks (user-specific)
+* Update task
+* Delete task
+
+7. SECURITY
+
+* Use dotenv for:
+
+  * MONGO_URI
+  * JWT_SECRET
+  * GEMINI_API_KEY
+* Protect routes using middleware
+
+8. PROJECT STRUCTURE
+
+/backend
+/models
+/routes
+/controllers
+/middleware
+/uploads
+server.js
+
+9. API ROUTES
+
+Auth:
+POST /auth/login
+
+Admin:
+POST /admin/create-user
+GET /admin/users
+DELETE /admin/user/:id
+
+Meeting:
+POST /meeting/upload-audio
+POST /meeting/process-text
+
+Tasks:
+GET /tasks
+PUT /tasks/:id
+DELETE /tasks/:id
+
+10. GEMINI INTEGRATION DETAILS
+
+Use fetch or axios to call Gemini API:
+
+* Model: gemini-pro
+* Send structured prompt
+* Return JSON response
+
+11. ERROR HANDLING
+
+* Proper try/catch
+* Return meaningful errors
+
+12. BONUS
+
+* Add logging middleware
+* Add basic rate limiting
+
+ENV VARIABLES:
+MONGO_URI=
+JWT_SECRET=
+GEMINI_API_KEY=
+
+OUTPUT:
+
+* Complete backend code
+* Ready to run with npm install + npm start
+* Include sample .env file
